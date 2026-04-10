@@ -1,0 +1,220 @@
+/* =========================================
+   INTERNET EXPLORER 6 STYLE
+   ========================================= */
+
+.ie6-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #ece9d8;
+    font-family: Tahoma, "Segoe UI", sans-serif;
+    color: #000;
+}
+
+/* 1. Menu Bar */
+.ie6-menu-bar {
+    display: flex;
+    align-items: center;
+    padding: 2px 5px;
+    font-size: 11px;
+    background-color: #ece9d8;
+    border-bottom: 1px solid #aca899;
+    box-shadow: 0 1px 0 #fff inset;
+}
+
+.ie-menu-item {
+    padding: 2px 6px;
+    cursor: default;
+}
+.ie-menu-item:hover {
+    background-color: #316ac5;
+    color: #fff;
+}
+
+.ie-lang-toggle {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-right: 15px;
+}
+.ie-lang-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    padding: 1px 4px;
+    font-size: 10px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.ie-lang-btn.active {
+    background: #c1d2ee;
+    border: 1px solid #316ac5;
+    font-weight: bold;
+}
+.ie-lang-btn:hover:not(.active) {
+    background: rgba(49,106,197,0.1);
+    border: 1px solid #99b4d1;
+}
+
+.ie-logo {
+    font-size: 14px;
+    margin-right: 5px;
+    font-weight: bold;
+    color: #316ac5;
+}
+
+/* 2. Standard Buttons */
+.ie6-std-buttons {
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    background-color: #ece9d8;
+    border-bottom: 1px solid #aca899;
+}
+
+.ie6-btn {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    background: transparent;
+    border: 1px solid transparent;
+    padding: 3px 5px;
+    font-family: Tahoma, sans-serif;
+    font-size: 11px;
+    cursor: pointer;
+    color: #000;
+    white-space: nowrap;
+}
+
+.ie6-btn .icon {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.ie6-btn:hover:not(.disabled) {
+    border: 1px solid #316ac5;
+    background-color: #c1d2ee;
+    border-radius: 3px;
+}
+
+.ie6-btn:active:not(.disabled) {
+    border: 1px solid #316ac5;
+    background-color: #98b4e2;
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.ie6-btn.disabled {
+    color: #888;
+    cursor: default;
+    filter: grayscale(100%) opacity(50%);
+}
+
+.ie6-separator {
+    width: 2px;
+    height: 32px;
+    border-left: 1px solid #aca899;
+    border-right: 1px solid #fff;
+    margin: 0 4px;
+}
+
+/* 3. Address Bar */
+.ie6-address-bar {
+    display: flex;
+    align-items: center;
+    padding: 3px 5px;
+    background-color: #ece9d8;
+    border-bottom: 1px solid #aca899;
+    font-size: 11px;
+    gap: 5px;
+}
+
+.address-label {
+    color: #aca899;
+    margin-right: 5px;
+}
+
+.address-input-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid;
+    border-color: #aca899 #fff #fff #aca899; /* Inset border effect */
+    padding: 2px 4px;
+    height: 20px;
+    gap: 5px;
+}
+
+.address-input-wrapper span {
+    font-size: 12px;
+    font-family: "Times New Roman", Times, serif;
+    color: #0044ff;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.address-input-wrapper input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: Tahoma, sans-serif;
+    font-size: 11px;
+    color: #000;
+}
+
+.address-go {
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    cursor: pointer;
+    margin-left: 5px;
+    color: #000;
+}
+.address-go:hover {
+    color: #316ac5;
+}
+
+/* 4. Viewport */
+.ie6-viewport {
+    flex: 1;
+    background-color: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-left: 1px solid #aca899;
+    border-top: 1px solid #8e8f8f;
+    border-bottom: 1px solid #aca899;
+}
+
+/* 5. Status Bar */
+.ie6-status-bar {
+    display: flex;
+    align-items: center;
+    height: 22px;
+    background-color: #ece9d8;
+    border-top: 1px solid #aca899;
+    font-size: 11px;
+    color: #000;
+}
+
+.status-block {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 5px;
+    border-right: 1px solid #aca899;
+    border-bottom: 1px solid #fff;
+    box-shadow: 1px 0 0 #fff; /* fake raised border */
+}
+
+.status-block.flex-1 {
+    flex: 1;
+}
+
+.status-block.zone {
+    width: 150px;
+    justify-content: flex-start;
+    gap: 5px;
+}

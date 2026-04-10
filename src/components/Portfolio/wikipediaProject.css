@@ -1,0 +1,253 @@
+.wiki-container {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    overflow-y: auto;
+    font-family: sans-serif;
+    color: #202122;
+}
+
+.wiki-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #a2a9b1;
+    padding: 10px 0;
+}
+
+.wiki-content-wrapper {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.header-wrap {
+    align-items: center;
+    gap: 20px;
+}
+
+.main-wrap {
+    display: block; 
+    margin-top: 20px;
+    padding-bottom: 50px;
+}
+
+.wiki-back-btn {
+    background: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    padding: 6px 15px;
+    cursor: pointer;
+    font-weight: normal;
+    border-radius: 2px;
+    font-size: 13px;
+}
+
+.wiki-back-btn:hover {
+    background: #eaecf0;
+}
+
+.wiki-logo h1 {
+    font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
+    margin: 0;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.wiki-logo p {
+    margin: 0;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    color: #54595d;
+}
+
+.wiki-title {
+    font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
+    margin: 0 0 5px 0;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.wiki-divider {
+    height: 1px;
+    background-color: #a2a9b1;
+    margin-bottom: 8px;
+}
+
+.wiki-text {
+    line-height: 1.6;
+    font-size: 14.5px;
+    margin-bottom: 15px;
+}
+
+.wiki-section-title {
+    font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+/* --- TÁCH 2 CỘT HERO --- */
+.wiki-hero-split {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    align-items: flex-start;
+}
+
+.wiki-hero-media {
+    flex: 1;
+}
+
+.target-cover {
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    background-color: #1e1e1e;
+    color: #00ffcc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border-radius: 4px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.wiki-hero-info {
+    flex: 0 0 230px;
+    background-color: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    padding: 12px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-info-title {
+    margin: 0 0 15px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.infobox-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    flex-grow: 1;
+}
+
+.infobox-table th {
+    text-align: left;
+    padding: 3px 5px 3px 0;
+    vertical-align: top;
+    width: 38%;
+    color: #444;
+}
+
+.infobox-table td {
+    padding: 3px 0 3px 0;
+    vertical-align: top;
+}
+
+.infobox-table a {
+    color: #0645ad;
+    text-decoration: none;
+}
+
+.infobox-table a:hover {
+    text-decoration: underline;
+}
+
+.wiki-action-buttons-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.wiki-main-content-full {
+    width: 100%;
+}
+
+/* --- PHẦN CÒN LẠI --- */
+
+.wiki-gallery {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.gallery-item {
+    flex: 1;
+}
+
+.placeholder-image-small {
+    width: 100%;
+    height: 150px;
+    background-color: #d8d8d8;
+    color: #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.gallery-item p {
+    font-size: 13px;
+    text-align: center;
+    color: #555;
+    margin-top: 8px;
+}
+
+.wiki-code-snippet {
+    background-color: #fdf6e3;
+    padding: 15px;
+    border-radius: 4px;
+    border-left: 4px solid #b58900;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #657b83;
+}
+
+.play-button {
+    background-color: #2ea44f;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.play-button:hover {
+    background-color: #22863a;
+}
+
+.download-button {
+    background-color: #e3e3e4;
+    color: #24292e;
+    border: 1px solid #d1d5da;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.download-button:hover {
+    background-color: #cbcccf;
+}

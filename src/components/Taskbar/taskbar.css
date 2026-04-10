@@ -45,24 +45,120 @@
     filter: brightness(1.1);
 }
 
-.clock {
+.system-tray {
     margin-left: auto;
     height: 100%;
     padding: 0 14px;
 
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
 
     font-family: Tahoma, sans-serif;
-    font-size: 10px;
+    font-size: 11px;
     color: white;
 
     background: linear-gradient(#3b7be0, #1f4ea3);
     border-left: 1px solid #6fa2ff;
 }
 
-.clock-icon {
-    font-size: 12px;
-    opacity: 0.9;
+.clock-text {
+    cursor: default;
+    user-select: none;
+}
+
+/* TRAY INFO / BALLOON */
+.tray-info-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.tray-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+}
+.tray-info-icon:hover {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 2px;
+}
+
+.xp-balloon {
+    position: absolute;
+    bottom: 30px;
+    right: -10px;
+    width: 250px;
+    background-color: #ffffe1;
+    border: 1px solid #000;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    padding: 10px 12px;
+    z-index: 99999;
+    color: #000;
+    cursor: default;
+    animation: balloon-pop 0.2s ease-out;
+}
+@keyframes balloon-pop {
+    from { opacity: 0; transform: translateY(10px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.xp-balloon-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.xp-balloon-title {
+    font-weight: bold;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.xp-balloon-close {
+    background: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 0 4px;
+    color: #888;
+    line-height: 1;
+}
+
+.xp-balloon-close:hover {
+    border: 1px solid #888;
+    background: #e8e8c8;
+    color: #000;
+}
+
+.xp-balloon-body {
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+/* The Tail pointing to Icon */
+.xp-balloon::before {
+    content: "";
+    position: absolute;
+    bottom: -16px;
+    right: 17px;
+    border-width: 16px 0 0 13px;
+    border-style: solid;
+    border-color: #000 transparent transparent transparent;
+}
+
+.xp-balloon::after {
+    content: "";
+    position: absolute;
+    bottom: -14px;
+    right: 18px;
+    border-width: 14px 0 0 11px;
+    border-style: solid;
+    border-color: #ffffe1 transparent transparent transparent;
 }

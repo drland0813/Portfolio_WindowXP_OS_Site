@@ -1,0 +1,230 @@
+/* Windows XP Explorer Styles */
+.xp-explorer-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #ece9d8; /* Standard XP Window Color */
+    font-family: Tahoma, 'Segoe UI', sans-serif;
+    color: #000;
+}
+
+/* --- TOP BARS --- */
+.xp-menu-bar {
+    padding: 2px 10px;
+    font-size: 11px;
+    color: #000;
+}
+
+.xp-menu-bar span {
+    margin-right: 15px;
+    cursor: default;
+}
+
+.xp-menu-bar span:first-letter {
+    text-decoration: underline;
+}
+
+.xp-toolbar {
+    display: flex;
+    align-items: center;
+    padding: 3px 5px;
+    background-color: #ece9d8;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #aca899;
+    box-shadow: 0 1px 0 #fff inset;
+    gap: 3px;
+}
+
+.xp-tool-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: transparent;
+    border: 1px solid transparent;
+    padding: 4px 6px;
+    font-family: Tahoma, sans-serif;
+    font-size: 11px;
+    cursor: pointer;
+    color: #000;
+}
+
+.xp-tool-btn:hover {
+    border: 1px solid #316ac5;
+    background-color: #c1d2ee;
+    border-radius: 3px;
+}
+
+.xp-separator {
+    width: 2px;
+    height: 30px;
+    border-left: 1px solid #aca899;
+    border-right: 1px solid #fff;
+    margin: 0 4px;
+}
+
+.xp-icon-img-small {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.xp-address-bar {
+    display: flex;
+    align-items: center;
+    padding: 4px 5px;
+    background-color: #ece9d8;
+    border-bottom: 1px solid #aca899;
+    font-size: 11px;
+    gap: 8px;
+}
+
+.xp-address-label {
+    color: #aca899;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.xp-address-input {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #7f9db9;
+    padding: 2px 5px;
+    height: 18px;
+    gap: 5px;
+}
+
+.xp-address-path {
+    margin: 0;
+    font-family: Tahoma, sans-serif;
+    font-size: 11px;
+    color: #000;
+}
+
+/* --- BODY & PANES --- */
+.xp-explorer-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    background-color: #fff;
+    border-top: 1px solid #fff;
+}
+
+/* Left Pane */
+.xp-left-pane {
+    width: 220px;
+    min-width: 220px;
+    background: linear-gradient(to bottom, #748de5 0%, #7496e5 100%);
+    border-right: 1px solid #aca899;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.xp-task-group {
+    background: #fff;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+
+.xp-task-header {
+    background: linear-gradient(to right, #ffffff 0%, #c4d7fc 100%);
+    color: #215dc6;
+    font-weight: bold;
+    font-size: 11px;
+    padding: 5px 10px;
+    cursor: default;
+}
+
+.xp-task-header:hover {
+    color: #428eff;
+}
+
+.xp-task-content {
+    background: #f1f2fa;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.xp-task-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: #215dc6;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.xp-task-link:hover {
+    color: #428eff;
+    text-decoration: underline;
+}
+
+/* Right Pane - Content Grid */
+.xp-right-pane {
+    flex: 1;
+    background-color: #ffffff;
+    overflow-y: auto;
+    padding: 20px 30px;
+}
+
+.xp-group-header {
+    font-size: 12px;
+    font-weight: bold;
+    color: #003399;
+    border-bottom: 1px solid #7ebef7;
+    margin-bottom: 15px;
+    padding-bottom: 2px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.xp-icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.xp-icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid transparent;
+}
+
+.xp-icon-item:hover {
+    background-color: rgba(49, 106, 197, 0.1);
+}
+
+.xp-icon-item:active, .xp-icon-item.selected {
+    background-color: rgba(49, 106, 197, 0.2);
+    border: 1px dotted #316ac5;
+}
+
+.xp-icon-img {
+    font-size: 40px;
+    line-height: 1;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+}
+
+.xp-icon-text {
+    font-size: 11px;
+    text-align: center;
+    color: #000;
+    line-height: 1.3;
+    word-break: break-word;
+}

@@ -2,6 +2,8 @@ import { useState } from "react";
 import DesktopIcon from "#components/DesktopIcon/desktopIcon.jsx";
 import Taskbar from "#components/Taskbar/taskbar.jsx";
 import WindowFrame from "#components/WindowFrame/windowFrame.jsx";
+import Portfolio from "#components/Portfolio/Portfolio.jsx";
+import showcaseLogo from "../../assets/windows/showcase_logo.png";
 
 import "./desktop.css";
 
@@ -33,7 +35,7 @@ const Desktop = () => {
             {/* ICON */}
             <DesktopIcon
                 title="My Showcase"
-                icon="/src/assets/windows/showcase_logo.png"
+                icon={showcaseLogo}
                 onDoubleClick={openDocs}
             />
 
@@ -44,8 +46,7 @@ const Desktop = () => {
                     onClose={closeDocs}
                     onMinimize={minimizeDocs}
                 >
-                    <h2>Showcase</h2>
-                    <p>Portfolio content will be added later...</p>
+                    <Portfolio />
                 </WindowFrame>
             )}
 
