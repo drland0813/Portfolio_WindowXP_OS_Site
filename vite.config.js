@@ -6,7 +6,7 @@ import {fileURLToPath} from 'url';
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/Portfolio_WindowXP_OS_Site",
+  base: "/Portfolio_WindowXP_OS_Site/",
   resolve: {
     alias: {
       "#components": resolve(dirname(fileURLToPath(import.meta.url)), "src/components"),

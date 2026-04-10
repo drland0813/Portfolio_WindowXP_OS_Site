@@ -35,7 +35,7 @@
 }
 
 .start-button {
-    background-image: url("/src/assets/windows/startButton__spriteSheet.png");
+    background-image: url("../../assets/windows/startButton__spriteSheet.png");
     background-size: cover;
     width: 95px;
     height: 30px;
