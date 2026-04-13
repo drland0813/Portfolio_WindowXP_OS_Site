@@ -26,7 +26,7 @@
     border-radius: 3px;
     color: white;
     font-size: 10px;
-    font-family: Tahoma, sans-serif;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
     border: 1px solid #1a3e82;
 }
 
@@ -35,14 +35,25 @@
 }
 
 .start-button {
-    background-image: url("../../assets/windows/startButton__spriteSheet.png");
-    background-size: cover;
-    width: 95px;
-    height: 30px;
+    background-image: url("../../assets/windows/nav/start.png");
+    background-color: transparent;
+    background-size: 100% 100%;
+    width: 101px;
+    height: 33px;
     border: none;
+    cursor: pointer;
+    position: relative;
+    margin-top: -3px;
+    align-self: flex-start;
+    z-index: 10;
+    outline: none;
 }
 .start-button:hover {
-    filter: brightness(1.1);
+    background-image: url("../../assets/windows/nav/start_hover.png");
+}
+.start-button:active,
+.start-button.active {
+    background-image: url("../../assets/windows/nav/start_press.png");
 }
 
 .system-tray {
@@ -54,7 +65,7 @@
     align-items: center;
     gap: 8px;
 
-    font-family: Tahoma, sans-serif;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
     font-size: 11px;
     color: white;
 

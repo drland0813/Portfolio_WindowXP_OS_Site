@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import "./taskbar.css";
 import StartMenu from "#components/StartMenu/startMenu.jsx";
 import TaskbarAppIcon from "#components/TaskbarAppIcon/taskbarAppIcon.jsx";
+import iconIexplore from "../../assets/windows/nav/iexplore.png";
 
 const VisitorCounter = () => {
     const [count, setCount] = useState(null);
@@ -100,14 +101,15 @@ const Taskbar = ({ isOpen, isMinimized, onRestore }) => {
 
             <div className="taskbar">
                 <button
-                    className="start-button"
+                    className={`start-button ${openMenu ? "active" : ""}`}
                     onClick={() => setOpenMenu(!openMenu)}
                 >
                 </button>
                 {/* ICON APP */}
                 {isOpen && (
                     <TaskbarAppIcon
-                        title="My Showcase"
+                        icon={iconIexplore}
+                        title="Internet Explorer"
                         active={!isMinimized}
                         onClick={onRestore}
                     />

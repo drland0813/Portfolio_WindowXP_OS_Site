@@ -71,6 +71,7 @@ export const projectsData = {
     en: {
         'project-1': {
             title: "Project 1",
+            videoUrl: "https://drive.google.com/file/d/1FFoFfduqPxEjPtKvAtcBi9OEYehEmojB/view?usp=drive_link",
             role: "Game Developer",
             engine: "Unity",
             language: "C#",
@@ -131,6 +132,7 @@ export const projectsData = {
     vi: {
         'project-1': {
             title: "Neon Cyber Drift",
+            videoUrl: "https://drive.google.com/file/d/1FFoFfduqPxEjPtKvAtcBi9OEYehEmojB/view?usp=drive_link",
             role: "Gameplay Programmer",
             engine: "Unity 2022.3 LTS",
             language: "C#",

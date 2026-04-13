@@ -1,12 +1,13 @@
 import "./taskbarAppIcon.css";
 
-const TaskbarAppIcon = ({ title, active, onClick }) => {
+const TaskbarAppIcon = ({ icon, title, active, onClick }) => {
     return (
         <div
             className={`taskbar-app ${active ? "active" : ""}`}
             onClick={onClick}
         >
-            {title}
+            {icon && <img src={icon} alt="" className="taskbar-app-icon" />}
+            <span className="taskbar-app-title">{title}</span>
         </div>
     );
 };

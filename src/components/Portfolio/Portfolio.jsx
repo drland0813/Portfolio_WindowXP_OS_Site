@@ -6,6 +6,20 @@ import AboutPage from './AboutPage';
 import ExperiencePage from './ExperiencePage';
 import ContactPage from './ContactPage';
 
+// Nav icons
+import iconBack from '../../assets/windows/nav/back.png';
+import iconForward from '../../assets/windows/nav/forward.png';
+import iconStop from '../../assets/windows/nav/stop.png';
+import iconRefresh from '../../assets/windows/nav/refresh.png';
+import iconHome from '../../assets/windows/nav/home.png';
+import iconSearch from '../../assets/windows/nav/search.png';
+import iconFavorites from '../../assets/windows/nav/favorites.png';
+import iconUp from '../../assets/windows/nav/up.png';
+import iconBrowserFlag from '../../assets/windows/nav/browserflag.png';
+import iconGo from '../../assets/windows/nav/go.png';
+import iconWebpage from '../../assets/windows/nav/webpage.png';
+import iconWorld from '../../assets/windows/nav/world.png';
+
 const Portfolio = () => {
     const [history, setHistory] = useState([{ view: 'home', data: null }]);
     const [lang, setLang] = useState('en');
@@ -32,8 +46,8 @@ const Portfolio = () => {
 
     let addressValue = "http://www.drland.com/";
     if (currentView === "projects") {
-        addressValue = activeProjectId 
-            ? `http://www.drland.com/projects/${activeProjectId}` 
+        addressValue = activeProjectId
+            ? `http://www.drland.com/projects/${activeProjectId}`
             : `http://www.drland.com/projects`;
     } else if (currentView !== "home") {
         addressValue += currentView;
@@ -49,58 +63,63 @@ const Portfolio = () => {
                 <span className="ie-menu-item">F<u>a</u>vorites</span>
                 <span className="ie-menu-item"><u>T</u>ools</span>
                 <span className="ie-menu-item"><u>H</u>elp</span>
-                
-                {/* Language Toggle in Menu Bar */}
-                <div className="ie-lang-toggle">
-                    <button className={`ie-lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>EN</button>
-                    |
-                    <button className={`ie-lang-btn ${lang === 'vi' ? 'active' : ''}`} onClick={() => setLang('vi')}>VI</button>
+
+                {/* IE Browser Flag Logo */}
+                <div className="ie-logo">
+                    <img src={iconBrowserFlag} alt="IE" className="ie-logo-img" />
                 </div>
-                {/* Fake Windows Flag Logo */}
-                <div className="ie-logo">⊞</div> 
             </div>
 
             {/* 2. IE6 Standard Toolbar Buttons */}
             <div className="ie6-std-buttons">
-                 <button className={`ie6-btn ${history.length <= 1 ? 'disabled' : ''}`} onClick={handleBack} disabled={history.length <= 1}>
-                     <span className="icon">🔙</span> {lang === 'vi' ? 'Lùi lại' : 'Back'}
-                 </button>
-                 <button className="ie6-btn disabled">
-                     <span className="icon">🔜</span>
-                 </button>
-                 <button className="ie6-btn disabled">
-                     <span className="icon">❌</span>
-                 </button>
-                 <button className="ie6-btn">
-                     <span className="icon">🔄</span>
-                 </button>
-                 <button className="ie6-btn" onClick={() => navigateTo('home')}>
-                     <span className="icon">🏠</span>
-                 </button>
-                 
-                 <div className="ie6-separator"></div>
-                 
-                 <button className="ie6-btn">
-                     <span className="icon">🔍</span> Search
-                 </button>
-                 <button className="ie6-btn">
-                     <span className="icon">⭐</span> Favorites
-                 </button>
+                <button className={`ie6-btn ${history.length <= 1 ? 'disabled' : ''}`} onClick={handleBack} disabled={history.length <= 1}>
+                    <span className="icon"><img src={iconBack} alt="Back" className="nav-icon" /></span>
+                    <span className="btn-label">Back</span>
+                </button>
+                <button className="ie6-btn disabled">
+                    <span className="icon"><img src={iconForward} alt="Forward" className="nav-icon" /></span>
+                </button>
+                <button className="ie6-btn disabled">
+                    <span className="icon"><img src={iconStop} alt="Stop" className="nav-icon" /></span>
+                </button>
+                <button className="ie6-btn">
+                    <span className="icon"><img src={iconRefresh} alt="Refresh" className="nav-icon" /></span>
+                </button>
+                <button className="ie6-btn" onClick={() => navigateTo('home')}>
+                    <span className="icon"><img src={iconHome} alt="Home" className="nav-icon" /></span>
+                </button>
+
+                <div className="ie6-separator"></div>
+
+                <button className="ie6-btn">
+                    <span className="icon"><img src={iconSearch} alt="Search" className="nav-icon" /></span>
+                    <span className="btn-label">Search</span>
+                </button>
+                <button className="ie6-btn">
+                    <span className="icon"><img src={iconFavorites} alt="Favorites" className="nav-icon" /></span>
+                    <span className="btn-label">Favorites</span>
+                </button>
             </div>
 
             {/* 3. IE6 Address Bar */}
             <div className="ie6-address-bar">
                 <span className="address-label">Address</span>
                 <div className="address-input-wrapper">
-                     <span className="ie-earth">e</span>
-                     <input type="text" value={addressValue} readOnly />
+                    <img src={iconWebpage} alt="" className="address-icon" />
+                    <input type="text" value={addressValue} readOnly />
                 </div>
                 <button className="address-go">
-                    <span style={{color: '#fff', background: '#316ac5', padding: '0 4px', borderRadius: '50%', marginRight: '3px'}}>→</span> Go
+                    <img src={iconGo} alt="Go" className="go-icon" />
                 </button>
             </div>
 
             <div className="ie6-viewport">
+                {/* Language Toggle - floating inside web content */}
+                <div className="ie-lang-toggle">
+                    <button className={`ie-lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>EN</button>
+                    |
+                    <button className={`ie-lang-btn ${lang === 'vi' ? 'active' : ''}`} onClick={() => setLang('vi')}>VI</button>
+                </div>
                 {currentView === 'home' && <PortfolioHome navigateTo={navigateTo} lang={lang} />}
                 {currentView === 'about' && <AboutPage navigateTo={navigateTo} lang={lang} />}
                 {currentView === 'experience' && <ExperiencePage navigateTo={navigateTo} lang={lang} />}
@@ -110,10 +129,10 @@ const Portfolio = () => {
 
             <div className="ie6-status-bar">
                 <div className="status-block flex-1">
-                    <span style={{fontSize: '12px', marginRight: '5px'}}>📄</span> Done
+                    <img src={iconWebpage} alt="" className="status-icon" /> Done
                 </div>
                 <div className="status-block zone">
-                    <span style={{fontSize: '12px'}}>🌐</span> Internet
+                    <img src={iconWorld} alt="" className="status-icon" /> Internet
                 </div>
             </div>
         </div>

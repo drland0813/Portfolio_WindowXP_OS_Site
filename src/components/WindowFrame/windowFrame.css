@@ -38,7 +38,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 6px;
+    padding: 0 4px 0 6px;
     /*color: white;*/
     font-weight: bold;
     font-size: 13px;
@@ -52,45 +52,51 @@
 /* ===== CONTROL BUTTONS ===== */
 .window-controls {
     display: flex;
-    gap: 4px;
+    gap: 2px;
 }
 
 .btn {
-    width: 20px;
-    height: 20px;
-    border: 1px solid white;
+    width: 21px;
+    height: 21px;
+    border: 1px solid #fff;
     border-radius: 3px;
+    background: linear-gradient(180deg, #74a1fb, #1f50b2);
+    box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.4), inset 1px 1px 2px rgba(255, 255, 255, 0.7);
     cursor: pointer;
-    background-image: url("../../assets/windows/window_frame_button_spritesheet.png");
-    /* sprite sheet */
-    background-size: 60px 18px;
+    outline: none;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
-.close {
-    background-color: #c26245;
-    background-position: -44px 0;
+.btn.close {
+    background: linear-gradient(180deg, #e7826d, #d04631);
 }
 
-.minimize {
-    background-position: -57px 0;
+.btn:hover {
+    background: linear-gradient(180deg, #8baeff, #2860d1);
 }
 
-.maximize {
-    background-position: -74px 0;
+.btn.close:hover {
+    background: linear-gradient(180deg, #ff957e, #e05138);
 }
 
-.close:hover {
-    /*#cc2e2e*/
-    background-color: #ff6a6a;
+.btn:active {
+    background: #1f50b2;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-.minimize:hover {
-    background-color: white;
+.btn.close:active {
+    background: #d04631;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-.maximize:hover {
-    background-color: white;
+.window-btn-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 

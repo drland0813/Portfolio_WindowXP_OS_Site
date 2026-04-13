@@ -1,31 +1,56 @@
 .desktop-icon {
-    width: 90px;
+    width: 100px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* center icon + text */
-    text-align: center;
+    align-items: center;
     color: white;
     cursor: pointer;
     user-select: none;
-    padding: 6px 4px;
-    margin-left: 20px;
-    margin-top: 20px;
+    padding: 2px;
+    margin-left: 2px;
+    margin-top: 10px;
+    outline: none;
 }
 
-.desktop-icon img {
-    width: 30px;
-    height: 30px;
+.icon-wrapper {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 2px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
 }
 
 .desktop-icon span {
-    display: block;
-    margin-top: 4px;
-    font-size: 10px;
-    line-height: 14px;
+    font-size: 13px;
+    font-family: 'MS Sans Serif', Tahoma, "Segoe UI", sans-serif;
+    line-height: 1.2;
+    text-align: center;
     word-break: break-word;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8), 0px 1px 2px rgba(0, 0, 0, 0.6);
+    padding: 1px 3px;
+    border: 1px dotted transparent;
 }
 
 .desktop-icon:hover {
-    background: rgba(49, 106, 197, 0.4);
-    border: 1px dotted rgba(255, 255, 255, 0.7);
+    background: transparent;
+    border: none;
+}
+.desktop-icon:focus span {
+    background-color: #0b58d6;
+    border: 1px dotted #fff;
+    border-radius: 1px;
+}
+
+.desktop-icon:focus .icon-wrapper img {
+    filter: brightness(0.6) sepia(1) hue-rotate(180deg) saturate(3) drop-shadow(1px 1px 0px rgba(255,255,255,0.3));
+    opacity: 0.8;
 }

@@ -19,6 +19,8 @@
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
+    container-type: inline-size;
+    container-name: wiki;
 }
 
 .header-wrap {
@@ -88,23 +90,25 @@
     margin-bottom: 5px;
 }
 
-/* --- TÁCH 2 CỘT HERO --- */
 .wiki-hero-split {
     display: flex;
+    flex-direction: column;
     gap: 15px;
     margin-top: 15px;
     margin-bottom: 25px;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 .wiki-hero-media {
-    flex: 1;
+    width: 100%;
 }
 
 .target-cover {
     width: 100%;
-    height: 100%;
+    max-width: 640px;
+    margin: 0 auto;
     min-height: 280px;
+    aspect-ratio: 16 / 9;
     background-color: #1e1e1e;
     color: #00ffcc;
     display: flex;
@@ -119,12 +123,30 @@
 }
 
 .wiki-hero-info {
-    flex: 0 0 230px;
+    width: 100%;
     background-color: #f8f9fa;
     border: 1px solid #a2a9b1;
     padding: 12px 15px;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+}
+
+@container wiki (min-width: 750px) {
+    .wiki-hero-split {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .wiki-hero-media {
+        flex: 1;
+        width: auto;
+    }
+    
+    .wiki-hero-info {
+        flex: 0 0 240px;
+        width: 240px;
+    }
 }
 
 .hero-info-title {

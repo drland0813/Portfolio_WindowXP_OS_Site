@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import "./windowFrame.css";
+import iconWebpage from "../../assets/windows/nav/webpage.png";
+import iconMinimize from "../../assets/windows/nav/minimize.png";
+import iconMaximize from "../../assets/windows/nav/maximize.png";
+import iconClose from "../../assets/windows/nav/close.png";
 
 const WindowFrame = ({
     title = "Window",
@@ -67,23 +71,31 @@ const WindowFrame = ({
             <div className="window-titleBar"
                 onMouseDown={handleMouseDown}
             >
-                {/*<span className="window-title">{title}</span>*/}
-                <span className="window-title">{title}</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <img src={iconWebpage} alt="Webpage" style={{ width: '16px', height: '16px' }} />
+                    <span className="window-title">{title}</span>
+                </div>
                 <div className="window-controls">
                     <button
                         onClick={onMinimize}
                         className="btn minimize"
-                    ></button>
+                    >
+                        <img src={iconMinimize} alt="Minimize" className="window-btn-icon" />
+                    </button>
 
                     <button
                         onClick={() => setIsMaximized(!isMaximized)}
                         className="btn maximize"
-                    ></button>
+                    >
+                        <img src={iconMaximize} alt="Maximize" className="window-btn-icon" />
+                    </button>
 
                     <button
                         onClick={onClose}
                         className="btn close"
-                    ></button>
+                    >
+                        <img src={iconClose} alt="Close" className="window-btn-icon" />
+                    </button>
                 </div>
             </div>
 

@@ -1,21 +1,16 @@
 import React, { useRef, useEffect } from 'react';
 import './projectsView.css';
-import './wikipediaProject.css'; // Mượn lại style cũ của phần nội dung
+import './wikipediaProject.css';
 import { archiveData, projectsData } from '../../data/projectsData';
 
 const ProjectsView = ({ navigateTo, activeProjectId, lang }) => {
-    // 1. Lấy root data
     const sidebarData = archiveData[lang];
     
-    // 2. Xác định dự án mặc định nếu chưa chọn
-    // Tự động load dự án đầu tiên của mảng (ví dụ: neon-cyber-drift)
     const defaultId = sidebarData[0].projects[0].id;
     const currentId = activeProjectId || defaultId;
     
-    // 3. Lấy dữ liệu bài báo của dự án đang hiển thị
     const projectContent = projectsData[lang][currentId] || projectsData[lang][defaultId];
 
-    // 4. Ref để scroll về đầu khi chuyển project
     const contentRef = useRef(null);
     useEffect(() => {
         if (contentRef.current) {
@@ -25,7 +20,6 @@ const ProjectsView = ({ navigateTo, activeProjectId, lang }) => {
 
     return (
         <div className="pv-container">
-            {/* CỘT TRÁI - SIDEBAR TIMELINE */}
             <div className="pv-sidebar">
                 <h3 style={{marginTop: 0, marginBottom: '25px', fontFamily: 'serif', fontSize: '1.4rem', textAlign: 'left'}}>{lang === 'vi' ? 'Lưu Trữ Dự Án' : 'Project Archive'}</h3>
                 {sidebarData.map((group, idx) => (
@@ -46,7 +40,6 @@ const ProjectsView = ({ navigateTo, activeProjectId, lang }) => {
                 ))}
             </div>
 
-            {/* CỘT PHẢI - NỘI DUNG CHI TIẾT (Kế thừa từ Wiki) */}
             <div className="pv-content" ref={contentRef}>
                 <div className="wiki-content-wrapper main-wrap" style={{ margin: 0, padding: 0, maxWidth: '100%' }}>
                     <h1 className="wiki-title">{projectContent.title}</h1>
@@ -54,9 +47,50 @@ const ProjectsView = ({ navigateTo, activeProjectId, lang }) => {
                     
                     <div className="wiki-hero-split">
                         <div className="wiki-hero-media">
-                            <div className="placeholder-gif target-cover">
-                                <span>[ PLAYING GAMEPLAY GIF / TRAILER: {projectContent.title} ]</span>
-                            </div>
+                            {(() => {
+                                if (!projectContent.videoUrl) {
+                                    return (
+                                        <div className="placeholder-gif target-cover">
+                                            <span>[ PLAYING GAMEPLAY GIF / TRAILER: {projectContent.title} ]</span>
+                                        </div>
+                                    );
+                                }
+
+                                if (projectContent.videoUrl.endsWith('.mp4') || projectContent.videoUrl.endsWith('.webm')) {
+                                    return (
+                                        <video 
+                                            className="target-cover" 
+                                            src={projectContent.videoUrl} 
+                                            autoPlay 
+                                            loop 
+                                            muted 
+                                            playsInline
+                                            style={{ border: 'none', padding: 0, backgroundColor: '#000', outline: 'none' }}
+                                        />
+                                    );
+                                }
+
+                                let iframeSrc = projectContent.videoUrl;
+                                if (iframeSrc.includes('drive.google.com')) {
+                                    iframeSrc = iframeSrc.replace(/\/view.*$/, '/preview');
+                                } else if (iframeSrc.includes('youtube.com') || iframeSrc.includes('youtu.be')) {
+                                    const match = iframeSrc.match(/[?&]v=([^&]+)/) || iframeSrc.match(/youtu\.be\/([^?]+)/);
+                                    if (match && match[1]) {
+                                        iframeSrc = `https://www.youtube.com/embed/${match[1]}?autoplay=1&mute=1&loop=1&playlist=${match[1]}&controls=0`;
+                                    }
+                                }
+
+                                return (
+                                    <iframe 
+                                        className="target-cover" 
+                                        src={iframeSrc} 
+                                        style={{ border: 'none', padding: 0, backgroundColor: '#000' }}
+                                        allow="autoplay; encrypted-media; fullscreen" 
+                                        allowFullScreen
+                                        title={`${projectContent.title} Demo`}
+                                    ></iframe>
+                                );
+                            })()}
                         </div>
                         
                         <div className="wiki-hero-info">
