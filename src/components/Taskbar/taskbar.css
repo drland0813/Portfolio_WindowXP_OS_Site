@@ -65,12 +65,13 @@
     align-items: center;
     gap: 8px;
 
-    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    font-family: 'Tahoma', sans-serif;
     font-size: 11px;
     color: white;
 
-    background: linear-gradient(#3b7be0, #1f4ea3);
-    border-left: 1px solid #6fa2ff;
+    background: linear-gradient(to bottom, #1290e9 0%, #0e88e8 10%, #0e7ce2 50%, #0e6ecc 85%, #0e56ad 100%);
+    border-left: 1px solid #104193;
+    box-shadow: inset 1px 0px 0px #359df0;
 }
 
 .clock-text {

@@ -16,6 +16,7 @@ const VisitorCounter = () => {
                 let url = "https://api.counterapi.dev/v1/drland/portfolio";
                 if (!hasVisited) {
                     url = "https://api.counterapi.dev/v1/drland/portfolio/up";
+                    localStorage.setItem("drland_visited", "true");
                 }
                 
                 const res = await fetch(url);
@@ -23,16 +24,14 @@ const VisitorCounter = () => {
                 
                 if (data && data.count) {
                     setCount(data.count);
-                    if (!hasVisited) {
-                        localStorage.setItem("drland_visited", "true");
-                        // Auto show balloon on first ever visit
-                        setTimeout(() => setShowBalloon(true), 2500);
-                        balloonTimeout.current = setTimeout(() => setShowBalloon(false), 12500);
-                    }
                 }
             } catch (err) {
                 console.error("Failed to load visitor count", err);
             }
+
+            // Always auto-show balloon on every visit
+            setTimeout(() => setShowBalloon(true), 2500);
+            balloonTimeout.current = setTimeout(() => setShowBalloon(false), 12500);
         };
         fetchVisits();
 
@@ -64,8 +63,9 @@ const VisitorCounter = () => {
                         <button className="xp-balloon-close" onClick={() => setShowBalloon(false)}>X</button>
                     </div>
                     <div className="xp-balloon-body">
-                        Thanks for dropping by!<br />
-                        You are visitor number <strong>{count ? count.toLocaleString() : "..."}</strong>.<br />
+                        Have a wonderful day! 🌟<br />
+                        Thanks for dropping by —<br />
+                        you are visitor number <strong>{count ? count.toLocaleString() : "..."}</strong>.
                     </div>
                 </div>
             )}
@@ -75,15 +75,32 @@ const VisitorCounter = () => {
 
 
 
-const Taskbar = ({ isOpen, isMinimized, onRestore }) => {
+const Taskbar = ({ isOpen, isMinimized, onRestore, onShutdown }) => {
     const [time, setTime] = useState("");
     const [openMenu, setOpenMenu] = useState(false);
+    const wrapperRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (openMenu && wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+                setOpenMenu(false);
+            }
+        };
+
+        if (openMenu) {
+            document.addEventListener("mousedown", handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [openMenu]);
 
     useEffect(() => {
         const updateTime = () => {
             const now = new Date();
             const formatted = now.toLocaleTimeString("en-US", {
-                hour: "2-digit",
+                hour: "numeric",
                 minute: "2-digit",
                 hour12: true,
             });
@@ -96,8 +113,8 @@ const Taskbar = ({ isOpen, isMinimized, onRestore }) => {
     }, []);
 
     return (
-        <>
-            {openMenu && <StartMenu />}
+        <div ref={wrapperRef}>
+            {openMenu && <StartMenu onShutdown={onShutdown} />}
 
             <div className="taskbar">
                 <button
@@ -120,7 +137,7 @@ const Taskbar = ({ isOpen, isMinimized, onRestore }) => {
                     <div className="clock-text">{time}</div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

@@ -1,15 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DesktopIcon from "#components/DesktopIcon/desktopIcon.jsx";
 import Taskbar from "#components/Taskbar/taskbar.jsx";
 import WindowFrame from "#components/WindowFrame/windowFrame.jsx";
 import Portfolio from "#components/Portfolio/Portfolio.jsx";
 import showcaseLogo from "../../assets/windows/showcase_logo.png";
+import startSoundUrl from "../../assets/windows/nav/Windows XP start sound.mp3";
 
 import "./desktop.css";
 
-const Desktop = () => {
+const Desktop = ({ onShutdown }) => {
+    useEffect(() => {
+        const audio = new Audio(startSoundUrl);
+        audio.play().catch(e => console.log("Audio play failed on startup:", e));
+    }, []);
     const [docsWindow, setDocsWindow] = useState({
-        open: false,
+        open: true,
         minimized: false,
     });
 
@@ -54,7 +59,8 @@ const Desktop = () => {
             <Taskbar
                 isOpen={docsWindow.open}
                 isMinimized={docsWindow.minimized}
-                onRestore={restoreDocs}
+                onRestore={() => setDocsWindow(prev => ({ ...prev, minimized: !prev.minimized }))}
+                onShutdown={onShutdown}
             />
         </div>
     );
