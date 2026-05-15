@@ -15,7 +15,7 @@
 
 .wiki-content-wrapper {
     display: flex;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
@@ -77,8 +77,8 @@
 }
 
 .wiki-text {
-    line-height: 1.6;
-    font-size: 14.5px;
+    line-height: 1.3;
+    font-size: 16px;
     margin-bottom: 15px;
 }
 
@@ -136,11 +136,11 @@
     .wiki-hero-split {
         flex-direction: row;
         align-items: flex-start;
+        justify-content: center;
     }
     
     .wiki-hero-media {
-        flex: 1;
-        width: auto;
+        width: 100%;
     }
     
     .wiki-hero-info {
@@ -200,14 +200,34 @@
 
 /* --- PHẦN CÒN LẠI --- */
 
+/* Base gallery: Grid layout */
 .wiki-gallery {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
     margin-bottom: 20px;
 }
 
 .gallery-item {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #d0d0d0;
+    display: block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: zoom-in;
+}
+
+.gallery-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
 }
 
 .placeholder-image-small {
@@ -223,10 +243,12 @@
 }
 
 .gallery-item p {
-    font-size: 13px;
+    font-size: 12px;
     text-align: center;
     color: #555;
-    margin-top: 8px;
+    margin-top: 6px;
+    line-height: 1.4;
+    flex-shrink: 0;
 }
 
 .wiki-code-snippet {
@@ -272,4 +294,88 @@
 
 .download-button:hover {
     background-color: #cbcccf;
+}
+
+/* Lightbox Modal */
+.lightbox-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    cursor: zoom-out;
+}
+
+.lightbox-scroll-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    gap: 50px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    cursor: default;
+    scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for a cleaner look but keep functionality */
+.lightbox-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+.lightbox-scroll-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); 
+}
+.lightbox-scroll-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3); 
+    border-radius: 4px;
+}
+.lightbox-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5); 
+}
+
+.lightbox-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 80vw;
+    max-width: 1000px;
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.5);
+}
+
+.lightbox-caption {
+    color: #ffffff;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    text-align: center;
+    max-width: 90%;
+    line-height: 1.5;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10001;
 }

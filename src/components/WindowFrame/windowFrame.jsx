@@ -58,9 +58,8 @@ const WindowFrame = ({
 
     return (
         <div
-            className={`window-frame ${isMaximized ? "maximized" : ""
-                }`}
-            style={{
+            className={`window-frame ${isMaximized ? "maximized" : ""}`}
+            style={isMaximized ? {} : {
                 left: position.x,
                 top: position.y,
                 position: 'absolute',

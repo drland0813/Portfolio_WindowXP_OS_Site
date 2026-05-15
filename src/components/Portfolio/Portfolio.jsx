@@ -114,12 +114,14 @@ const Portfolio = () => {
             </div>
 
             <div className="ie6-viewport">
-                {/* Language Toggle - floating inside web content */}
+                {/* Language Toggle - floating inside web content (Temporarily hidden) */}
+                {/* 
                 <div className="ie-lang-toggle">
                     <button className={`ie-lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>EN</button>
                     |
                     <button className={`ie-lang-btn ${lang === 'vi' ? 'active' : ''}`} onClick={() => setLang('vi')}>VI</button>
                 </div>
+                */}
                 {currentView === 'home' && <PortfolioHome navigateTo={navigateTo} lang={lang} />}
                 {currentView === 'about' && <AboutPage navigateTo={navigateTo} lang={lang} />}
                 {currentView === 'experience' && <ExperiencePage navigateTo={navigateTo} lang={lang} />}

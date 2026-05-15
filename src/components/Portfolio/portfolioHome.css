@@ -24,6 +24,17 @@
     letter-spacing: -2px;
 }
 
+.ph-title-name,
+.ph-title-alias {
+    display: block;
+}
+
+.ph-title-alias {
+    font-size: 0.72em;
+    line-height: 1;
+    margin-top: 8px;
+}
+
 .ph-subtitle {
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.5rem;

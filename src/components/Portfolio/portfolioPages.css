@@ -50,20 +50,191 @@
     line-height: 1.6;
 }
 
+.about-content {
+    max-width: 920px;
+}
+
+.about-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 180px;
+    gap: 28px;
+    align-items: start;
+}
+
+.about-text p {
+    margin: 0;
+    white-space: pre-line;
+}
+
+.about-extra {
+    margin-top: 22px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.about-extra h3 {
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.about-extra ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.about-extra li {
+    margin-bottom: 6px;
+}
+
+.about-photo-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
+
+.about-photo-card {
+    width: 170px;
+    margin: 0;
+    padding: 8px;
+    background: #f8f8f2;
+    border: 1px solid #c8c8bc;
+    box-shadow: inset 1px 1px 0 #fff, 2px 2px 0 #e0e0d6;
+    box-sizing: border-box;
+}
+
+.about-photo-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border: 1px solid #8c8c8c;
+    background: #efefe7;
+}
+
+.about-photo-card figcaption {
+    margin-top: 6px;
+    color: #555;
+    font-size: 0.85rem;
+    font-style: italic;
+    line-height: 1.2;
+    text-align: center;
+}
+
+@media (max-width: 680px) {
+    .about-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .about-photo-column {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .about-photo-card {
+        width: min(46%, 160px);
+    }
+}
+
 .pp-exp-item {
     margin-bottom: 30px;
     border-bottom: 1px dashed #d0d0c6;
     padding-bottom: 20px;
 }
+
+.pp-exp-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 4px;
+}
+
 .pp-exp-role {
     font-size: 1.5rem;
     font-weight: bold;
-    margin: 0 0 5px 0;
+    margin: 0;
+    color: #222;
+    line-height: 1.2;
 }
+
+.pp-exp-year {
+    flex: 0 0 auto;
+    margin-top: 2px;
+    padding: 2px 8px;
+    border: 1px solid #b8b8aa;
+    background: #f6f6eb;
+    color: #333;
+    font-size: 0.95rem;
+    font-weight: bold;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
 .pp-exp-company {
     font-family: 'Times New Roman', Times, serif;
-    color: #666;
-    margin: 0 0 10px 0;
+    color: #4241d6;
+    font-weight: bold;
+    margin: 0 0 12px 0;
+}
+
+.pp-exp-description {
+    margin: 0 0 16px 0;
+    color: #4a4a4a;
+}
+
+.pp-exp-contributions h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.05rem;
+    color: #333;
+}
+
+.pp-exp-contributions ul {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.pp-exp-contributions li {
+    margin-bottom: 6px;
+}
+
+.pp-exp-tech {
+    margin-top: 12px;
+}
+
+.pp-exp-tech h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.pp-exp-tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 0;
+    color: #555;
+}
+
+.pp-exp-tech-list span::after {
+    content: "\00a0\2022\00a0";
+    color: #888;
+}
+
+.pp-exp-tech-list span:last-child::after {
+    content: "";
+}
+
+@media (max-width: 560px) {
+    .pp-exp-heading {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .pp-exp-year {
+        align-self: flex-start;
+    }
 }
 
 /* --------------------------

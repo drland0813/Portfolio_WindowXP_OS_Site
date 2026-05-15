@@ -15,9 +15,9 @@
 }
 
 .window-frame.maximized {
-    background: #ece9d8;
     background: linear-gradient(#2658d3, #1f4ea3);
-    border-radius: 8px 8px 0 0;
+    border-radius: 0;
+    border-top: 3px solid #6fa2ff;
     overflow: hidden;
 
     position: fixed !important;
@@ -25,11 +25,9 @@
     left: 0 !important;
     width: 100vw !important;
     height: 100vh !important;
-
     transform: none !important;
-    ;
-
 }
+
 
 /* ===== TITLE BAR ===== */
 .window-titleBar {
