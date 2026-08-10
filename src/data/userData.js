@@ -72,7 +72,7 @@ export const userData = {
             formLabels: { name: "Your name", email: "Email", company: "Company (optional)", message: "Message", send: "Send Message", sending: "Sending...", sent: "Sent ✓", note: "All messages get forwarded straight to my personal email", required: "required" },
             email: "drland0813@gmail.com",
             github: "https://github.com/drland0813",
-            linkedin: "https://linkedin.com/",
+            linkedin: "https://www.linkedin.com/in/drland0813/",
             resumeText: "Need a copy of my Resume?",
             resumeLink: "Click here to download it!"
         }
@@ -133,7 +133,7 @@ export const userData = {
             formLabels: { name: "Tên của bạn", email: "Email", company: "Công ty (tùy chọn)", message: "Lời nhắn", send: "Gửi Tin Nhắn", sending: "Đang gửi...", sent: "Đã Gửi ✓", note: "Tất cả tin nhắn sẽ được chuyển thẳng tới email cá nhân của tôi.", required: "bắt buộc" },
             email: "[EMAIL_ADDRESS]",
             github: "https://github.com/drland0813",
-            linkedin: "https://linkedin.com/",
+            linkedin: "https://www.linkedin.com/in/drland0813/",
             resumeText: "Bạn cần bản sao Sơ yếu lý lịch (Resume)?",
             resumeLink: "Bấm vào đây để tải về!"
         }
