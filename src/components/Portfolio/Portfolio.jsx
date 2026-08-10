@@ -20,7 +20,7 @@ import iconGo from '../../assets/windows/nav/go.png';
 import iconWebpage from '../../assets/windows/nav/webpage.png';
 import iconWorld from '../../assets/windows/nav/world.png';
 
-const Portfolio = () => {
+const Portfolio = ({ onOpenPdf }) => {
     const [history, setHistory] = useState([{ view: 'home', data: null }]);
     const [lang, setLang] = useState('en');
 
@@ -125,7 +125,7 @@ const Portfolio = () => {
                 {currentView === 'home' && <PortfolioHome navigateTo={navigateTo} lang={lang} />}
                 {currentView === 'about' && <AboutPage navigateTo={navigateTo} lang={lang} />}
                 {currentView === 'experience' && <ExperiencePage navigateTo={navigateTo} lang={lang} />}
-                {currentView === 'contact' && <ContactPage navigateTo={navigateTo} lang={lang} />}
+                {currentView === 'contact' && <ContactPage navigateTo={navigateTo} lang={lang} onOpenPdf={onOpenPdf} />}
                 {currentView === 'projects' && <ProjectsView navigateTo={navigateTo} activeProjectId={activeProjectId} lang={lang} />}
             </div>
 

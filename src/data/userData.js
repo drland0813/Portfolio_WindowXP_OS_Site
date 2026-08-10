@@ -67,11 +67,11 @@ export const userData = {
         },
         contactData: {
             title: "Contact",
-            desc: "I am currently working as a Freelance Game Developer, but if you have any exciting opportunities or projects, do not hesitate to reach out! You can email me directly or fill out the form below.",
+            desc: "Currently open to Game Developer opportunities, freelance collaborations, and creative projects. If you think my skills and mindset fit your team, feel free to reach out — I would love to build something awesome together.",
             emailStr: "Email",
             formLabels: { name: "Your name", email: "Email", company: "Company (optional)", message: "Message", send: "Send Message", sending: "Sending...", sent: "Sent ✓", note: "All messages get forwarded straight to my personal email", required: "required" },
             email: "drland0813@gmail.com",
-            github: "https://github.com/drland",
+            github: "https://github.com/drland0813",
             linkedin: "https://linkedin.com/",
             resumeText: "Need a copy of my Resume?",
             resumeLink: "Click here to download it!"
@@ -131,8 +131,8 @@ export const userData = {
             desc: "Tôi hiện đang làm việc như một Freelance Game Developer, nhưng nếu bạn có bất kỳ cơ hội hoặc dự án thú vị nào, đừng ngại liên hệ! Bạn có thể gửi email trực tiếp cho tôi, hoặc điền vào form bên dưới.",
             emailStr: "Thư Điện Tử",
             formLabels: { name: "Tên của bạn", email: "Email", company: "Công ty (tùy chọn)", message: "Lời nhắn", send: "Gửi Tin Nhắn", sending: "Đang gửi...", sent: "Đã Gửi ✓", note: "Tất cả tin nhắn sẽ được chuyển thẳng tới email cá nhân của tôi.", required: "bắt buộc" },
-            email: "drland0813@gmail.com",
-            github: "https://github.com/drland",
+            email: "[EMAIL_ADDRESS]",
+            github: "https://github.com/drland0813",
             linkedin: "https://linkedin.com/",
             resumeText: "Bạn cần bản sao Sơ yếu lý lịch (Resume)?",
             resumeLink: "Bấm vào đây để tải về!"

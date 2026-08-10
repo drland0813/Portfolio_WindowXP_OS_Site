@@ -75,7 +75,7 @@ const VisitorCounter = () => {
 
 
 
-const Taskbar = ({ isOpen, isMinimized, onRestore, onShutdown }) => {
+const Taskbar = ({ windows = [], onShutdown }) => {
     const [time, setTime] = useState("");
     const [openMenu, setOpenMenu] = useState(false);
     const wrapperRef = useRef(null);
@@ -123,14 +123,17 @@ const Taskbar = ({ isOpen, isMinimized, onRestore, onShutdown }) => {
                 >
                 </button>
                 {/* ICON APP */}
-                {isOpen && (
-                    <TaskbarAppIcon
-                        icon={iconIexplore}
-                        title="Internet Explorer"
-                        active={!isMinimized}
-                        onClick={onRestore}
-                    />
-                )}
+                <div style={{ display: "flex", gap: "2px", marginLeft: "5px" }}>
+                    {windows.map((win) => win.isOpen && (
+                        <TaskbarAppIcon
+                            key={win.id}
+                            icon={win.icon}
+                            title={win.title}
+                            active={win.isActive !== undefined ? win.isActive : !win.isMinimized}
+                            onClick={win.onRestore}
+                        />
+                    ))}
+                </div>
 
                 <div className="system-tray">
                     <VisitorCounter />

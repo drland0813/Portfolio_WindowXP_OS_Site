@@ -384,3 +384,125 @@
     font-weight: normal;
     font-size: 0.85rem;
 }
+
+
+@keyframes cv-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.cv-modal-window {
+    width: min(860px, 94vw);
+    height: min(90vh, 640px);
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #0054e3;
+    box-shadow:
+        inset 1px 1px 0 #7ab0ff,
+        3px 3px 10px rgba(0,0,0,0.5);
+    animation: cv-slide-in 0.18s ease;
+}
+
+@keyframes cv-slide-in {
+    from { transform: translateY(-16px); opacity: 0; }
+    to   { transform: translateY(0);     opacity: 1; }
+}
+
+.cv-modal-titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 6px;
+    background: linear-gradient(to bottom, #0a84ff 0%, #0054e3 100%);
+    flex-shrink: 0;
+    gap: 8px;
+}
+
+.cv-modal-title {
+    color: #fff;
+    font-family: 'Trebuchet MS', Tahoma, sans-serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.cv-modal-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.cv-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    background: linear-gradient(to bottom, #f0f0e8 0%, #d8d8cc 100%);
+    border: 1px solid #888;
+    border-top-color: #bbb;
+    border-left-color: #bbb;
+    font-family: 'Trebuchet MS', Tahoma, sans-serif;
+    font-size: 0.78rem;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 0 #fff;
+}
+
+.cv-download-btn:hover {
+    background: linear-gradient(to bottom, #e0e8ff 0%, #c8d0f8 100%);
+    border-color: #3360cc;
+    color: #000;
+}
+
+.cv-download-btn:active {
+    background: linear-gradient(to bottom, #c0c8e8 0%, #d0d8f0 100%);
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.cv-close-btn {
+    width: 22px;
+    height: 22px;
+    background: linear-gradient(to bottom, #f08080 0%, #cc2020 100%);
+    border: 1px solid #881010;
+    border-top-color: #ff9090;
+    border-left-color: #ff9090;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', Tahoma, sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    box-shadow: inset 1px 1px 0 rgba(255,255,255,0.4);
+}
+
+.cv-close-btn:hover {
+    background: linear-gradient(to bottom, #ff9090 0%, #ee3030 100%);
+}
+
+.cv-close-btn:active {
+    background: linear-gradient(to bottom, #aa1010 0%, #cc3030 100%);
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.cv-modal-body {
+    flex: 1;
+    background: #f6f6eb;
+    overflow: hidden;
+    border-top: 1px solid #0040b0;
+}
+
+.cv-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}

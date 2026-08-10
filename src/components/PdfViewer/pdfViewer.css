@@ -1,0 +1,72 @@
+/* PDF Viewer container — fills WindowFrame body */
+.pdf-viewer-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #525659;
+    box-sizing: border-box;
+}
+
+/* Override react-pdf-viewer layout to fill container */
+.pdf-viewer-container .rpv-core__viewer {
+    height: 100% !important;
+}
+
+/* ===== Custom XP-style Toolbar ===== */
+.rpv-xp-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 32px;
+    background: linear-gradient(to bottom, #f0efe8, #dddcd4);
+    border-bottom: 1px solid #a8a89a;
+    padding: 0 6px;
+    box-sizing: border-box;
+    gap: 4px;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 12px;
+}
+
+.rpv-xp-toolbar-left,
+.rpv-xp-toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.rpv-xp-sep {
+    width: 1px;
+    height: 20px;
+    background: #a0a090;
+    margin: 0 4px;
+}
+
+.rpv-xp-page-info {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: #333;
+    padding: 0 4px;
+}
+
+/* Style react-pdf-viewer toolbar buttons to look WinXP-ish */
+.rpv-xp-toolbar button,
+.rpv-xp-toolbar .rpv-core__minimal-button {
+    background: linear-gradient(to bottom, #f6f5ef, #e0dfd8) !important;
+    border: 1px solid #a0a090 !important;
+    border-radius: 2px !important;
+    color: #222 !important;
+    font-size: 11px !important;
+    padding: 2px 5px !important;
+    cursor: pointer !important;
+    min-width: 24px !important;
+    height: 22px !important;
+}
+
+.rpv-xp-toolbar button:hover,
+.rpv-xp-toolbar .rpv-core__minimal-button:hover {
+    background: linear-gradient(to bottom, #dde5f8, #b8c8f0) !important;
+    border-color: #4060cc !important;
+}

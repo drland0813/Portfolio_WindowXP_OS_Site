@@ -7,8 +7,11 @@ import iconClose from "../../assets/windows/nav/close.png";
 
 const WindowFrame = ({
     title = "Window",
+    icon = null,
     onMinimize,
     onClose,
+    zIndex = 1,
+    onFocus,
     children
 }) => {
     const [isMaximized, setIsMaximized] = useState(false);
@@ -59,19 +62,21 @@ const WindowFrame = ({
     return (
         <div
             className={`window-frame ${isMaximized ? "maximized" : ""}`}
-            style={isMaximized ? {} : {
-                left: position.x,
-                top: position.y,
-                position: 'absolute',
+            style={{
+                zIndex: zIndex,
+                ...(isMaximized ? {} : {
+                    left: position.x,
+                    top: position.y,
+                    position: 'absolute',
+                })
             }}
-        // onMouseMove={handleMouseMove}
-        // onMouseUp={handleMouseUp}
+            onMouseDownCapture={onFocus}
         >
             <div className="window-titleBar"
                 onMouseDown={handleMouseDown}
             >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                    <img src={iconWebpage} alt="Webpage" style={{ width: '16px', height: '16px' }} />
+                    <img src={icon || iconWebpage} alt="icon" style={{ width: '16px', height: '16px' }} />
                     <span className="window-title">{title}</span>
                 </div>
                 <div className="window-controls">
@@ -98,7 +103,10 @@ const WindowFrame = ({
                 </div>
             </div>
 
-            <div className="window-body">
+            <div className="window-body" style={{ position: 'relative', height: '100%' }}>
+                {isDragging && (
+                    <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 9999 }} />
+                )}
                 {children}
             </div>
         </div>
